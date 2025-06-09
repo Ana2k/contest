@@ -1,15 +1,24 @@
-# DSA Contest Generator
+# DSA Contest Generator (Vue 3)
 
-A local-first single-page React application that helps you generate randomized DSA practice contests from a CSV file of questions.
+A local-first single-page Vue 3 application that helps you generate randomized DSA practice contests from a CSV file of questions.
 
 ## Features
 
 - **CSV Upload**: Upload a CSV file containing DSA practice questions
 - **Filter Panel**: Filter questions by difficulty type, topics, and source
-- **Contest Generator**: Generate 4 random questions based on selected filters
-- **Timer Functionality**: Global contest timer and per-question stopwatches
-- **Repeat Avoidance**: Tracks completed questions in localStorage
+- **Contest Generator**: Generate random questions based on selected filters
+- **State Management**: Pinia store for managing questions and filters
+- **Type Safety**: Full TypeScript support
 - **Responsive Design**: Works on both desktop and mobile devices
+
+## Tech Stack
+
+- Vue 3 (Composition API)
+- TypeScript
+- Pinia (State Management)
+- TailwindCSS
+- PapaParse (CSV parsing)
+- Vite
 
 ## CSV Format
 
@@ -47,6 +56,25 @@ https://leetcode.com/problems/add-two-numbers,Medium,Linked List|Math,LeetCode
 
 4. Open [http://localhost:5173](http://localhost:5173) in your browser
 
+## Project Structure
+
+```
+src/
+├── components/          # Vue components
+│   ├── FileUpload.vue  # CSV upload component
+│   ├── FilterPanel.vue # Filter controls
+│   └── QuestionList.vue # Question display
+├── store/              # Pinia stores
+│   └── useQuestionStore.ts
+├── types/              # TypeScript types
+│   └── question.ts
+├── utils/              # Utility functions
+│   ├── parseCSV.ts
+│   └── filterQuestions.ts
+├── App.vue            # Root component
+└── main.ts            # Application entry
+```
+
 ## Usage
 
 1. Prepare your CSV file following the format described above
@@ -61,9 +89,7 @@ https://leetcode.com/problems/add-two-numbers,Medium,Linked List|Math,LeetCode
    - Medium Only
    - All Difficulties
 5. Click "Generate Contest" to create a new contest
-6. Use the global timer to track your contest time
-7. Use individual timers for each question
-8. Mark questions as done when completed
+6. Mark questions as done when completed
 
 ## Future Enhancements
 
@@ -71,13 +97,7 @@ https://leetcode.com/problems/add-two-numbers,Medium,Linked List|Math,LeetCode
 - Database persistence for user history
 - Integration with Google Sheets or LeetCode API
 - Analytics dashboard (average time per topic, etc.)
-
-## Tech Stack
-
-- React + Vite
-- TailwindCSS
-- PapaParse (CSV parsing)
-- Local Storage (data persistence)
+- React version in a monorepo structure
 
 ## Contributing
 
