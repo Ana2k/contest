@@ -1,108 +1,188 @@
+<template>
+  <div class="file-upload">
+    <div class="upload-container" 
+         @dragover.prevent="isDragging = true"
+         @dragleave.prevent="isDragging = false"
+         @drop.prevent="handleFileDrop"
+         :class="{ 'is-dragging': isDragging }">
+      <input
+        type="file"
+        ref="fileInput"
+        accept=".csv"
+        class="file-input"
+        @change="handleFileChange"
+      />
+      
+      <div class="upload-content">
+        <div class="upload-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </div>
+        
+        <h3 class="upload-title">Upload your questions CSV file</h3>
+        <p class="upload-description">
+          Drag and drop your CSV file here, or click to browse
+        </p>
+        <p class="upload-hint">
+          Download our <a href="/sample_questions.csv" download class="sample-link">sample CSV file</a> to see the required format
+        </p>
+      </div>
+    </div>
+
+    <div v-if="error" class="error-message">
+      {{ error }}
+    </div>
+
+    <div v-if="store.questions.length" class="upload-success">
+      <div class="success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <span>Successfully loaded {{ store.questions.length }} questions</span>
+    </div>
+  </div>
+</template>
+
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useQuestionStore } from '@/store/useQuestionStore'
+import { useQuestionStore } from '../store/useQuestionStore'
+import { parseCSV } from '../utils/parseCSV'
 
 const store = useQuestionStore()
+const fileInput = ref<HTMLInputElement | null>(null)
 const isDragging = ref(false)
 const error = ref('')
 
-const handleDragOver = (e: DragEvent) => {
-  e.preventDefault()
-  isDragging.value = true
+const handleFileChange = async (event: Event) => {
+  const input = event.target as HTMLInputElement
+  if (input.files?.length) {
+    await processFile(input.files[0])
+  }
 }
 
-const handleDragLeave = (e: DragEvent) => {
-  e.preventDefault()
+const handleFileDrop = async (event: DragEvent) => {
   isDragging.value = false
+  const file = event.dataTransfer?.files[0]
+  if (file) {
+    await processFile(file)
+  }
 }
 
-const handleDrop = async (e: DragEvent) => {
-  e.preventDefault()
-  isDragging.value = false
-  error.value = ''
-
-  const file = e.dataTransfer?.files[0]
-  if (!file) return
-
-  if (file.type !== 'text/csv') {
+const processFile = async (file: File) => {
+  if (!file.name.endsWith('.csv')) {
     error.value = 'Please upload a CSV file'
     return
   }
 
-  const success = await store.uploadCSV(file)
-  if (!success) {
+  try {
+    const text = await file.text()
+    const questions = parseCSV(text)
+    store.setQuestions(questions)
+    error.value = ''
+  } catch (e) {
     error.value = 'Error parsing CSV file. Please check the format.'
-  }
-}
-
-const handleFileInput = async (e: Event) => {
-  const input = e.target as HTMLInputElement
-  const file = input.files?.[0]
-  if (!file) return
-
-  if (file.type !== 'text/csv') {
-    error.value = 'Please upload a CSV file'
-    return
-  }
-
-  const success = await store.uploadCSV(file)
-  if (!success) {
-    error.value = 'Error parsing CSV file. Please check the format.'
+    console.error(e)
   }
 }
 </script>
 
-<template>
-  <div class="w-full max-w-2xl mx-auto p-6">
-    <div
-      :class="[
-        'border-2 border-dashed rounded-lg p-8 text-center',
-        isDragging ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
-      ]"
-      @dragover="handleDragOver"
-      @dragleave="handleDragLeave"
-      @drop="handleDrop"
-    >
-      <input
-        type="file"
-        accept=".csv"
-        @change="handleFileInput"
-        class="hidden"
-        id="csv-upload"
-      />
-      <label
-        for="csv-upload"
-        class="cursor-pointer block"
-      >
-        <div class="space-y-2">
-          <svg
-            class="mx-auto h-12 w-12 text-gray-400"
-            stroke="currentColor"
-            fill="none"
-            viewBox="0 0 48 48"
-            aria-hidden="true"
-          >
-            <path
-              d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          <div class="text-gray-600">
-            <span class="font-medium text-blue-600 hover:text-blue-500">
-              Upload a CSV file
-            </span>
-            or drag and drop
-          </div>
-          <p class="text-xs text-gray-500">
-            CSV file with columns: Question Link, Type, Topics, Source List
-          </p>
-        </div>
-      </label>
-    </div>
-    <p v-if="error" class="mt-2 text-sm text-red-600 text-center">
-      {{ error }}
-    </p>
-  </div>
-</template> 
+<style scoped>
+.file-upload {
+  width: 100%;
+}
+
+.upload-container {
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #fafafa;
+}
+
+.upload-container:hover {
+  border-color: var(--primary-color);
+  background-color: #f0f7ff;
+}
+
+.upload-container.is-dragging {
+  border-color: var(--primary-color);
+  background-color: #f0f7ff;
+}
+
+.file-input {
+  display: none;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-icon {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.upload-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.upload-description {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.upload-hint {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.sample-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sample-link:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 6px;
+  color: var(--error-color);
+  font-size: 0.875rem;
+}
+
+.upload-success {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 6px;
+  color: var(--success-color);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.success-icon {
+  display: flex;
+  align-items: center;
+}
+</style> 
