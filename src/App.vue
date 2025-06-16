@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import Papa from 'papaparse'
+import Timer from './components/Timer.vue'
 
 const questions = ref([])
 const shuffledQuestions = ref([])
@@ -34,9 +35,14 @@ onMounted(() => {
 
 <template>
   <div class="container">
-    <h1>Random Questions</h1>
+    <div class="header">
+      <h1>Random Questions</h1>
+      <div class="timer-wrapper">
+        <Timer />
+      </div>
+    </div>
     <button @click="shuffleQuestions">Shuffle Questions</button>
-    
+
     <table>
       <thead>
         <tr>
@@ -65,13 +71,26 @@ onMounted(() => {
   padding: 20px;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.timer-wrapper {
+  position: sticky;
+  top: 20px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
@@ -103,4 +122,4 @@ a {
 a:hover {
   text-decoration: underline;
 }
-</style> 
+</style>
