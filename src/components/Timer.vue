@@ -64,27 +64,24 @@ const onInput = (e, type) => {
 </script>
 
 <template>
-    <div class="timer-minimal-container">
-        <div class="timer-minimal-row">
-            <input class="timer-minimal-input" type="number" min="0" max="99" :value="hours"
-                @input="e => onInput(e, 'h')"> :
-            <input class="timer-minimal-input" type="number" min="0" max="59" :value="minutes"
-                @input="e => onInput(e, 'm')"> :
-            <input class="timer-minimal-input" type="number" min="0" max="59" :value="seconds"
-                @input="e => onInput(e, 's')">
+    <div class="timer-container">
+        <div class="timer-row">
+            <input class="timer-input" type="number" min="00" max="99" :value="hours" @input="e => onInput(e, 'h')"> :
+            <input class="timer-input" type="number" min="00" max="59" :value="minutes" @input="e => onInput(e, 'm')"> :
+            <input class="timer-input" type="number" min="00" max="59" :value="seconds" @input="e => onInput(e, 's')">
         </div>
-        <div class="timer-minimal-controls-row">
-            <button class="timer-minimal-main-btn" @click="isRunning ? stopTimer() : startTimer()">
+        <div class="timer-controls-row">
+            <button class="timer-main-btn" @click="isRunning ? stopTimer() : startTimer()">
                 <span v-if="!isRunning">Start</span>
                 <span v-else>Stop</span>
             </button>
-            <button class="timer-minimal-btn" @click="resetTimer">Reset</button>
+            <button class="timer-btn" @click="resetTimer">Reset</button>
         </div>
     </div>
 </template>
 
 <style scoped>
-.timer-minimal-container {
+.timer-container {
     background: #fff;
     border: 1px solid #ececec;
     border-radius: 12px;
@@ -100,7 +97,7 @@ const onInput = (e, type) => {
     gap: 8px;
 }
 
-.timer-minimal-row {
+.timer-row {
     display: flex;
     align-items: center;
     gap: 2px;
@@ -108,7 +105,7 @@ const onInput = (e, type) => {
     margin-bottom: 2px;
 }
 
-.timer-minimal-input {
+.timer-input {
     width: 2.1em;
     font-size: 1.3rem;
     background: transparent;
@@ -122,11 +119,11 @@ const onInput = (e, type) => {
     transition: border 0.2s;
 }
 
-.timer-minimal-input:focus {
+.timer-input:focus {
     border-bottom: 1.5px solid #b3b3b3;
 }
 
-.timer-minimal-btn {
+.timer-btn {
     background: #f7f7f7;
     color: #222;
     border: 1px solid #ececec;
@@ -137,12 +134,12 @@ const onInput = (e, type) => {
     transition: background 0.15s, border 0.15s;
 }
 
-.timer-minimal-btn:hover {
+.timer-btn:hover {
     background: #f0f0f0;
     border: 1px solid #d3d3d3;
 }
 
-.timer-minimal-controls-row {
+.timer-controls-row {
     display: flex;
     gap: 8px;
     margin-top: 2px;
@@ -150,7 +147,7 @@ const onInput = (e, type) => {
     justify-content: center;
 }
 
-.timer-minimal-main-btn {
+.timer-main-btn {
     background: #fff;
     color: #222;
     border: 1.5px solid #b3b3b3;
@@ -162,7 +159,7 @@ const onInput = (e, type) => {
     transition: background 0.15s, border 0.15s;
 }
 
-.timer-minimal-main-btn:hover {
+.timer-main-btn:hover {
     background: #f7f7f7;
     border: 1.5px solid #888;
 }
