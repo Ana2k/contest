@@ -1,63 +1,63 @@
-Topic,Question (LeetCode ID & Title),Link,Difficulty
-Arrays & Strings,1 Two Sum,https://leetcode.com/problems/two-sum/,Easy
-Arrays & Strings,3 Longest Substring Without Repeating Characters,https://leetcode.com/problems/longest-substring-without-repeating-characters/,Medium
-Arrays & Strings,15 3Sum,https://leetcode.com/problems/3sum/,Medium
-Arrays & Strings,239 Sliding Window Maximum,https://leetcode.com/problems/sliding-window-maximum/,Hard
-Arrays & Strings,424 Longest Repeating Character Replacement,https://leetcode.com/problems/longest-repeating-character-replacement/,Medium
-Arrays & Strings,560 Subarray Sum Equals K,https://leetcode.com/problems/subarray-sum-equals-k/,Medium
-Arrays & Strings,76 Minimum Window Substring,https://leetcode.com/problems/minimum-window-substring/,Hard
-Arrays & Strings,347 Top K Frequent Elements,https://leetcode.com/problems/top-k-frequent-elements/,Medium
-Recursion & Backtracking,46 Permutations,https://leetcode.com/problems/permutations/,Medium
-Recursion & Backtracking,77 Combinations,https://leetcode.com/problems/combinations/,Medium
-Recursion & Backtracking,51 N-Queens,https://leetcode.com/problems/n-queens/,Hard
-Recursion & Backtracking,22 Generate Parentheses,https://leetcode.com/problems/generate-parentheses/,Medium
-Recursion & Backtracking,39 Combination Sum,https://leetcode.com/problems/combination-sum/,Medium
-Recursion & Backtracking,17 Letter Combinations of a Phone Number,https://leetcode.com/problems/letter-combinations-of-a-phone-number/,Medium
-Recursion & Backtracking,131 Palindrome Partitioning,https://leetcode.com/problems/palindrome-partitioning/,Medium
-Recursion & Backtracking,78 Subsets,https://leetcode.com/problems/subsets/,Medium
-Binary Search & D&C,704 Binary Search,https://leetcode.com/problems/binary-search/,Easy
-Binary Search & D&C,33 Search in Rotated Sorted Array,https://leetcode.com/problems/search-in-rotated-sorted-array/,Medium
-Binary Search & D&C,153 Find Minimum in Rotated Sorted Array,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/,Medium
-Binary Search & D&C,162 Find Peak Element,https://leetcode.com/problems/find-peak-element/,Medium
-Binary Search & D&C,875 Koko Eating Bananas,https://leetcode.com/problems/koko-eating-bananas/,Medium
-Binary Search & D&C,410 Split Array Largest Sum,https://leetcode.com/problems/split-array-largest-sum/,Hard
-Binary Search & D&C,240 Search a 2D Matrix II,https://leetcode.com/problems/search-a-2d-matrix-ii/,Medium
-Binary Search & D&C,4 Median of Two Sorted Arrays,https://leetcode.com/problems/median-of-two-sorted-arrays/,Hard
-Linked Lists, Stacks & Queues,206 Reverse Linked List,https://leetcode.com/problems/reverse-linked-list/,Easy
-Linked Lists, Stacks & Queues,141 Linked List Cycle,https://leetcode.com/problems/linked-list-cycle/,Easy
-Linked Lists, Stacks & Queues,25 Reverse Nodes in k-Group,https://leetcode.com/problems/reverse-nodes-in-k-group/,Hard
-Linked Lists, Stacks & Queues,21 Merge Two Sorted Lists,https://leetcode.com/problems/merge-two-sorted-lists/,Easy
-Linked Lists, Stacks & Queues,23 Merge k Sorted Lists,https://leetcode.com/problems/merge-k-sorted-lists/,Hard
-Linked Lists, Stacks & Queues,155 Min Stack,https://leetcode.com/problems/min-stack/,Medium
-Linked Lists, Stacks & Queues,739 Daily Temperatures,https://leetcode.com/problems/daily-temperatures/,Medium
-Linked Lists, Stacks & Queues,853 Car Fleet,https://leetcode.com/problems/car-fleet/,Medium
-Queue,Implement Queue using Stacks (LC 232),https://leetcode.com/problems/implement-queue-using-stacks/,Easy
-Queue,Design Circular Queue (LC 622),https://leetcode.com/problems/design-circular-queue/,Medium
-Queue,Sliding Window Maximum (LC 239),https://leetcode.com/problems/sliding-window-maximum/,Hard
-Queue,Shortest Subarray with Sum at Least K (LC 862),https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/,Hard
-Queue,Constrained Subsequence Sum (LC 1425),https://leetcode.com/problems/constrained-subsequence-sum/,Hard
-Trees & BSTs,94 Binary Tree Inorder Traversal,https://leetcode.com/problems/binary-tree-inorder-traversal/,Easy
-Trees & BSTs,102 Binary Tree Level Order Traversal,https://leetcode.com/problems/binary-tree-level-order-traversal/,Medium
-Trees & BSTs,105 Construct Binary Tree from Preorder and Inorder Traversal,https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/,Medium
-Trees & BSTs,226 Invert Binary Tree,https://leetcode.com/problems/invert-binary-tree/,Easy
-Trees & BSTs,124 Binary Tree Maximum Path Sum,https://leetcode.com/problems/binary-tree-maximum-path-sum/,Hard
-Trees & BSTs,235 Lowest Common Ancestor of a BST,https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/,Medium
-Trees & BSTs,297 Serialize and Deserialize Binary Tree,https://leetcode.com/problems/serialize-and-deserialize-binary-tree/,Hard
-Trees & BSTs,230 Kth Smallest Element in a BST,https://leetcode.com/problems/kth-smallest-element-in-a-bst/,Medium
-Graphs,200 Number of Islands,https://leetcode.com/problems/number-of-islands/,Medium
-Graphs,207 Course Schedule,https://leetcode.com/problems/course-schedule/,Medium
-Graphs,695 Max Area of Island,https://leetcode.com/problems/max-area-of-island/,Medium
-Graphs,133 Clone Graph,https://leetcode.com/problems/clone-graph/,Medium
-Graphs,1337 The K Weakest Rows in a Matrix,https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/,Easy
-Graphs,684 Redundant Connection,https://leetcode.com/problems/redundant-connection/,Medium
-Graphs,994 Rotting Oranges,https://leetcode.com/problems/rotting-oranges/,Medium
-Graphs,261 Graph Valid Tree,https://leetcode.com/problems/graph-valid-tree/,Medium
-Heaps, Greedy & Bit-Math,703 Kth Largest Element in a Stream,https://leetcode.com/problems/kth-largest-element-in-a-stream/,Easy
-Heaps, Greedy & Bit-Math,215 Kth Largest Element in an Array,https://leetcode.com/problems/kth-largest-element-in-an-array/,Medium
-Heaps, Greedy & Bit-Math,630 Course Schedule III,https://leetcode.com/problems/course-schedule-iii/,Hard
-Heaps, Greedy & Bit-Math,295 Find Median from Data Stream,https://leetcode.com/problems/find-median-from-data-stream/,Hard
-Heaps, Greedy & Bit-Math,253 Meeting Rooms II,https://leetcode.com/problems/meeting-rooms-ii/,Medium
-Heaps, Greedy & Bit-Math,435 Non-overlapping Intervals,https://leetcode.com/problems/non-overlapping-intervals/,Medium
-Heaps, Greedy & Bit-Math,55 Jump Game,https://leetcode.com/problems/jump-game/,Medium
-Heaps, Greedy & Bit-Math,191 Number of 1 Bits,https://leetcode.com/problems/number-of-1-bits/,Easy
-Heaps, Greedy & Bit-Math,190 Reverse Bits,https://leetcode.com/problems/reverse-bits/,Easy
+Topic,Question,Difficulty,Link
+Arrays & Strings,Two Sum,Easy,https://leetcode.com/problems/two-sum/
+Arrays & Strings,Longest Substring Without Repeating Characters,Medium,https://leetcode.com/problems/longest-substring-without-repeating-characters/
+Arrays & Strings,3Sum,Medium,https://leetcode.com/problems/3sum/
+Arrays & Strings,Sliding Window Maximum,Hard,https://leetcode.com/problems/sliding-window-maximum/
+Arrays & Strings,Longest Repeating Character Replacement,Medium,https://leetcode.com/problems/longest-repeating-character-replacement/
+Arrays & Strings,Subarray Sum Equals K,Medium,https://leetcode.com/problems/subarray-sum-equals-k/
+Arrays & Strings,Minimum Window Substring,Hard,https://leetcode.com/problems/minimum-window-substring/
+Arrays & Strings,Top K Frequent Elements,Medium,https://leetcode.com/problems/top-k-frequent-elements/
+Recursion & Backtracking,Permutations,Medium,https://leetcode.com/problems/permutations/
+Recursion & Backtracking,Combinations,Medium,https://leetcode.com/problems/combinations/
+Recursion & Backtracking,N-Queens,Hard,https://leetcode.com/problems/n-queens/
+Recursion & Backtracking,Generate Parentheses,Medium,https://leetcode.com/problems/generate-parentheses/
+Recursion & Backtracking,Combination Sum,Medium,https://leetcode.com/problems/combination-sum/
+Recursion & Backtracking,Letter Combinations of a Phone Number,Medium,https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+Recursion & Backtracking,Palindrome Partitioning,Medium,https://leetcode.com/problems/palindrome-partitioning/
+Recursion & Backtracking,Subsets,Medium,https://leetcode.com/problems/subsets/
+Binary Search & D&C,Binary Search,Easy,https://leetcode.com/problems/binary-search/
+Binary Search & D&C,Search in Rotated Sorted Array,Medium,https://leetcode.com/problems/search-in-rotated-sorted-array/
+Binary Search & D&C,Find Minimum in Rotated Sorted Array,Medium,https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+Binary Search & D&C,Find Peak Element,Medium,https://leetcode.com/problems/find-peak-element/
+Binary Search & D&C,Koko Eating Bananas,Medium,https://leetcode.com/problems/koko-eating-bananas/
+Binary Search & D&C,Split Array Largest Sum,Hard,https://leetcode.com/problems/split-array-largest-sum/
+Binary Search & D&C,Search a 2D Matrix II,Medium,https://leetcode.com/problems/search-a-2d-matrix-ii/
+Binary Search & D&C,Median of Two Sorted Arrays,Hard,https://leetcode.com/problems/median-of-two-sorted-arrays/
+LinkedLists-Stacks-Queues,Reverse Linked List,Easy,https://leetcode.com/problems/reverse-linked-list/
+LinkedLists-Stacks-Queues,Linked List Cycle,Easy,https://leetcode.com/problems/linked-list-cycle/
+LinkedLists-Stacks-Queues,Reverse Nodes in k-Group,Hard,https://leetcode.com/problems/reverse-nodes-in-k-group/
+LinkedLists-Stacks-Queues,Merge Two Sorted Lists,Easy,https://leetcode.com/problems/merge-two-sorted-lists/
+LinkedLists-Stacks-Queues,Merge k Sorted Lists,Hard,https://leetcode.com/problems/merge-k-sorted-lists/
+LinkedLists-Stacks-Queues,Min Stack,Medium,https://leetcode.com/problems/min-stack/
+LinkedLists-Stacks-Queues,Daily Temperatures,Medium,https://leetcode.com/problems/daily-temperatures/
+LinkedLists-Stacks-Queues,Car Fleet,Medium,https://leetcode.com/problems/car-fleet/
+Queue,Implement Queue using Stacks,Easy,https://leetcode.com/problems/implement-queue-using-stacks/
+Queue,Design Circular Queue,Medium,https://leetcode.com/problems/design-circular-queue/
+Queue,Sliding Window Maximum,Hard,https://leetcode.com/problems/sliding-window-maximum/
+Queue,Shortest Subarray with Sum at Least K,Hard,https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
+Queue,Constrained Subsequence Sum,Hard,https://leetcode.com/problems/constrained-subsequence-sum/
+Trees & BSTs,Binary Tree Inorder Traversal,Easy,https://leetcode.com/problems/binary-tree-inorder-traversal/
+Trees & BSTs,Binary Tree Level Order Traversal,Medium,https://leetcode.com/problems/binary-tree-level-order-traversal/
+Trees & BSTs,Construct Binary Tree from Preorder and Inorder Traversal,Medium,https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+Trees & BSTs,Invert Binary Tree,Easy,https://leetcode.com/problems/invert-binary-tree/
+Trees & BSTs,Binary Tree Maximum Path Sum,Hard,https://leetcode.com/problems/binary-tree-maximum-path-sum/
+Trees & BSTs,Lowest Common Ancestor of a BST,Medium,https://leetcode.com/problems/lowest-common-ancestor-of-a-bst/
+Trees & BSTs,Serialize and Deserialize Binary Tree,Hard,https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
+Trees & BSTs,Kth Smallest Element in a BST,Medium,https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+Graphs,Number of Islands,Medium,https://leetcode.com/problems/number-of-islands/
+Graphs,Course Schedule,Medium,https://leetcode.com/problems/course-schedule/
+Graphs,Max Area of Island,Medium,https://leetcode.com/problems/max-area-of-island/
+Graphs,Clone Graph,Medium,https://leetcode.com/problems/clone-graph/
+Graphs,The K Weakest Rows in a Matrix,Easy,https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
+Graphs,Redundant Connection,Medium,https://leetcode.com/problems/redundant-connection/
+Graphs,Rotting Oranges,Medium,https://leetcode.com/problems/rotting-oranges/
+Graphs,Graph Valid Tree,Medium,https://leetcode.com/problems/graph-valid-tree/
+Heaps-Greedy-BitMath,Kth Largest Element in a Stream,Easy,https://leetcode.com/problems/kth-largest-element-in-a-stream/
+Heaps-Greedy-BitMath,Kth Largest Element in an Array,Medium,https://leetcode.com/problems/kth-largest-element-in-an-array/
+Heaps-Greedy-BitMath,Course Schedule III,Hard,https://leetcode.com/problems/course-schedule-iii/
+Heaps-Greedy-BitMath,Find Median from Data Stream,Hard,https://leetcode.com/problems/find-median-from-data-stream/
+Heaps-Greedy-BitMath,Meeting Rooms II,Medium,https://leetcode.com/problems/meeting-rooms-ii/
+Heaps-Greedy-BitMath,Non-overlapping Intervals,Medium,https://leetcode.com/problems/non-overlapping-intervals/
+Heaps-Greedy-BitMath,Jump Game,Medium,https://leetcode.com/problems/jump-game/
+Heaps-Greedy-BitMath,Number of 1 Bits,Easy,https://leetcode.com/problems/number-of-1-bits/
+Heaps-Greedy-BitMath,Reverse Bits,Easy,https://leetcode.com/problems/reverse-bits/

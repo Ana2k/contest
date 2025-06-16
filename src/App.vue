@@ -7,7 +7,7 @@ const shuffledQuestions = ref([])
 
 const loadCSV = async () => {
   try {
-    const response = await fetch('/sample_questions.csv')
+    const response = await fetch('/core.csv')
     const csvText = await response.text()
     Papa.parse(csvText, {
       header: true,
@@ -24,7 +24,7 @@ const loadCSV = async () => {
 const shuffleQuestions = () => {
   shuffledQuestions.value = [...questions.value]
     .sort(() => Math.random() - 0.5)
-    .slice(0, 10) // Get 10 random questions
+    .slice(0, 4) // Get 10 random questions
 }
 
 onMounted(() => {
