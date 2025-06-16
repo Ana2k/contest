@@ -47,17 +47,15 @@ onMounted(() => {
       <thead>
         <tr>
           <th>Topic</th>
-          <th>Question</th>
+          <th>Question Link</th>
           <th>Difficulty</th>
-          <th>Link</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="question in shuffledQuestions" :key="question.Link">
           <td>{{ question.Topic }}</td>
-          <td>{{ question.Question }}</td>
+          <td><a :href="question.Link" target="_blank">{{ question.Question }}</a></td>
           <td>{{ question.Difficulty }}</td>
-          <td><a :href="question.Link" target="_blank">Solve</a></td>
         </tr>
       </tbody>
     </table>

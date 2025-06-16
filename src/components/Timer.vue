@@ -54,21 +54,26 @@ onUnmounted(() => {
     if (timerInterval.value) clearInterval(timerInterval.value)
 })
 
-const onInput = (e, type) => {
-    let val = parseInt(e.target.value)
-    if (isNaN(val) || val < 0) val = 0
-    if (type === 'h') hours.value = val
-    if (type === 'm') minutes.value = val > 59 ? 59 : val
-    if (type === 's') seconds.value = val > 59 ? 59 : val
-}
+const onTextInput = (e, type) => {
+    let val = e.target.value.replace(/[^0-9]/g, ''); // Only digits
+    if (val.length > 2) val = val.slice(0, 2);
+    let num = parseInt(val, 10);
+    if (isNaN(num)) num = 0;
+    if (type === 'h') hours.value = Math.min(num, 99);
+    if (type === 'm') minutes.value = Math.min(num, 59);
+    if (type === 's') seconds.value = Math.min(num, 59);
+};
 </script>
 
 <template>
     <div class="timer-container">
         <div class="timer-row">
-            <input class="timer-input" type="number" min="00" max="99" :value="hours" @input="e => onInput(e, 'h')"> :
-            <input class="timer-input" type="number" min="00" max="59" :value="minutes" @input="e => onInput(e, 'm')"> :
-            <input class="timer-input" type="number" min="00" max="59" :value="seconds" @input="e => onInput(e, 's')">
+            <input class="timer-input" type="text" maxlength="2" :value="String(hours).padStart(2, '0')"
+                @input="e => onTextInput(e, 'h')"> :
+            <input class="timer-input" type="text" maxlength="2" :value="String(minutes).padStart(2, '0')"
+                @input="e => onTextInput(e, 'm')"> :
+            <input class="timer-input" type="text" maxlength="2" :value="String(seconds).padStart(2, '0')"
+                @input="e => onTextInput(e, 's')">
         </div>
         <div class="timer-controls-row">
             <button class="timer-main-btn" @click="isRunning ? stopTimer() : startTimer()">
