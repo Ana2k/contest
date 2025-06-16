@@ -1,150 +1,106 @@
-<script setup lang="ts">
-import FileUpload from '@/components/FileUpload.vue'
-import FilterPanel from '@/components/FilterPanel.vue'
-import QuestionList from '@/components/QuestionList.vue'
-import { useQuestionStore } from '@/store/useQuestionStore'
+<script setup>
+import { ref, onMounted } from 'vue'
+import Papa from 'papaparse'
 
-const store = useQuestionStore()
+const questions = ref([])
+const shuffledQuestions = ref([])
+
+const loadCSV = async () => {
+  try {
+    const response = await fetch('/sample_questions.csv')
+    const csvText = await response.text()
+    Papa.parse(csvText, {
+      header: true,
+      complete: (results) => {
+        questions.value = results.data
+        shuffleQuestions()
+      }
+    })
+  } catch (error) {
+    console.error('Error loading CSV:', error)
+  }
+}
+
+const shuffleQuestions = () => {
+  shuffledQuestions.value = [...questions.value]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 10) // Get 10 random questions
+}
+
+onMounted(() => {
+  loadCSV()
+})
 </script>
 
 <template>
-  <div class="app-container">
-    <header class="app-header">
-      <h1>LeetCode Contest Generator</h1>
-      <p class="subtitle">Generate practice contests from your question bank</p>
-    </header>
-
-    <main class="main-content">
-      <div class="upload-section">
-        <FileUpload />
-      </div>
-
-      <div class="content-wrapper">
-        <aside class="filter-panel">
-          <FilterPanel v-if="store.questions.length" />
-        </aside>
-
-        <section class="question-list">
-          <QuestionList />
-        </section>
-      </div>
-    </main>
+  <div class="container">
+    <h1>Random Questions</h1>
+    <button @click="shuffleQuestions">Shuffle Questions</button>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>Question</th>
+          <th>Difficulty</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="question in shuffledQuestions" :key="question.Link">
+          <td>{{ question.Topic }}</td>
+          <td>{{ question.Question }}</td>
+          <td>{{ question.Difficulty }}</td>
+          <td><a :href="question.Link" target="_blank">Solve</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <style>
-:root {
-  --primary-color: #2563eb;
-  --secondary-color: #1e40af;
-  --background-color: #f8fafc;
-  --text-color: #1e293b;
-  --border-color: #e2e8f0;
-  --success-color: #22c55e;
-  --error-color: #ef4444;
-  --warning-color: #f59e0b;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  line-height: 1.5;
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
-.app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.app-header {
-  background-color: white;
-  padding: 1.5rem 2rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.app-header h1 {
-  color: var(--primary-color);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  color: #64748b;
-  font-size: 1.1rem;
-}
-
-.main-content {
-  flex: 1;
-  padding: 2rem;
-  max-width: 1400px;
+.container {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
+}
+
+table {
   width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.upload-section {
-  margin-bottom: 2rem;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
 }
 
-.content-wrapper {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 2rem;
-  align-items: start;
+th {
+  background-color: #f4f4f4;
 }
 
-.filter-panel {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 2rem;
+button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px 0;
 }
 
-.question-list {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+button:hover {
+  background-color: #45a049;
 }
 
-@media (max-width: 1024px) {
-  .content-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .filter-panel {
-    position: static;
-  }
+a {
+  color: #2196F3;
+  text-decoration: none;
 }
 
-@media (max-width: 640px) {
-  .main-content {
-    padding: 1rem;
-  }
-
-  .app-header {
-    padding: 1rem;
-  }
-
-  .app-header h1 {
-    font-size: 1.5rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
+a:hover {
+  text-decoration: underline;
 }
 </style> 
