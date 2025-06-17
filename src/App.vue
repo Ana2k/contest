@@ -25,7 +25,7 @@ const loadCSV = async () => {
 const shuffleQuestions = () => {
   shuffledQuestions.value = [...questions.value]
     .sort(() => Math.random() - 0.5)
-    .slice(0, 4) // Get 10 random questions
+    .slice(0, 10) // Get 4 random questions
 }
 
 onMounted(() => {
