@@ -8,7 +8,7 @@ const shuffledQuestions = ref([])
 
 const loadCSV = async () => {
   try {
-    const response = await fetch('/core.csv')
+    const response = await fetch('/array.csv')
     const csvText = await response.text()
     Papa.parse(csvText, {
       header: true,
