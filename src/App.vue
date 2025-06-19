@@ -25,7 +25,7 @@ const loadCSV = async () => {
 const shuffleQuestions = () => {
   shuffledQuestions.value = [...questions.value]
     .sort(() => Math.random() - 0.5)
-    .slice(0, 10) // Get 4 random questions
+    .slice(0, 4) // Get 4 random questions
 }
 
 onMounted(() => {
@@ -46,14 +46,14 @@ onMounted(() => {
     <table>
       <thead>
         <tr>
-          <th>Topic</th>
+          <!-- <th>Topic</th> -->
           <th>Question Link</th>
           <th>Difficulty</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="question in shuffledQuestions" :key="question.Link">
-          <td>{{ question.Topic }}</td>
+          <!-- <td>{{ question.Topic }}</td> -->
           <td><a :href="question.Link" target="_blank">{{ question.Question }}</a></td>
           <td>{{ question.Difficulty }}</td>
         </tr>
