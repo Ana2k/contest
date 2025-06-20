@@ -1,0 +1,32 @@
+Topic,Question,Difficulty,Link
+Heaps-Greedy-BitMath,Find Median from Data Stream,Hard,https://leetcode.com/problems/find-median-from-data-stream/
+Dynamic Programming,0-1 Knapsack Problem,Medium,https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
+Dynamic Programming,Subset Sum Problem,Medium,https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
+Dynamic Programming,Equal Sum Partition Problem,Medium,https://www.geeksforgeeks.org/partition-problem-dp-18/
+Dynamic Programming,Count of Subsets Sum with a Given Sum,Medium,https://www.geeksforgeeks.org/count-of-subsets-with-sum-equal-to-x/
+Dynamic Programming,Minimum Subset Sum Difference,Hard,https://www.geeksforgeeks.org/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum/
+Dynamic Programming,Target Sum,Hard,https://leetcode.com/problems/target-sum/
+Dynamic Programming,Unbounded Knapsack Problem,Medium,https://www.geeksforgeeks.org/unbounded-knapsack-repetition-items-allowed/
+Dynamic Programming,Rod Cutting Problem,Medium,https://www.geeksforgeeks.org/cutting-a-rod-dp-13/
+Dynamic Programming,Coin Change Problem (Maximum Number of Ways),Medium,https://leetcode.com/problems/coin-change-2/
+Dynamic Programming,Coin Change Problem (Minimum Number of Coins),Medium,https://leetcode.com/problems/coin-change/
+Dynamic Programming,Longest Common Subsequence (LCS),Medium,https://leetcode.com/problems/longest-common-subsequence/
+Dynamic Programming,Longest Common Substring,Medium,https://www.geeksforgeeks.org/longest-common-substring-dp-29/
+Dynamic Programming,Print Longest Common Subsequence,Medium,https://www.geeksforgeeks.org/printing-longest-common-subsequence/
+Dynamic Programming,Shortest Common Supersequence,Hard,https://leetcode.com/problems/shortest-common-supersequence/
+Dynamic Programming,Minimum Insertions/Deletions to Convert String A to B,Hard,https://www.geeksforgeeks.org/minimum-number-deletions-insertions-transform-one-string-another/
+Dynamic Programming,Longest Palindromic Subsequence,Medium,https://leetcode.com/problems/longest-palindromic-subsequence/
+Dynamic Programming,Minimum Deletions to Make a Sequence Sorted,Medium,https://www.geeksforgeeks.org/minimum-number-deletions-make-sorted-sequence/
+Dynamic Programming,Matrix Chain Multiplication,Hard,https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/
+Dynamic Programming,Palindrome Partitioning,Hard,https://leetcode.com/problems/palindrome-partitioning-ii/
+Dynamic Programming,Word Break Problem,Medium,https://leetcode.com/problems/word-break/
+Dynamic Programming,Edit Distance,Hard,https://leetcode.com/problems/edit-distance/
+Dynamic Programming,Maximum Subarray Sum (Kadane's Algorithm),Easy,https://leetcode.com/problems/maximum-subarray/
+Dynamic Programming,Interleaving String,Medium,https://leetcode.com/problems/interleaving-string/
+Dynamic Programming,Maximum Product Subarray,Medium,https://leetcode.com/problems/maximum-product-subarray/
+Dynamic Programming,House Robber,Easy,https://leetcode.com/problems/house-robber/
+Dynamic Programming,House Robber II,Medium,https://leetcode.com/problems/house-robber-ii/
+Dynamic Programming,Best Time to Buy and Sell Stock with Cooldown,Medium,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
+Dynamic Programming,Best Time to Buy and Sell Stock with Transaction Fee,Medium,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/
+Dynamic Programming,Best Time to Buy and Sell Stock III,Hard,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+Dynamic Programming,Best Time to Buy and Sell Stock IV,Hard,https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
