@@ -4,12 +4,12 @@ import Timer from './components/Timer.vue'
 import QuestionSelector from './components/QuestionSelector.vue'
 import { useQuestions } from './composables/useQuestions'
 
-const { questions, loadQuestions } = useQuestions()
+const { questions, loadQuestions, selectedQuestions } = useQuestions()
 const shuffledQuestions = ref([])
 const showSelector = ref(false)
 
 const shuffleQuestions = () => {
-  shuffledQuestions.value = [...questions.value]
+  shuffledQuestions.value = [...selectedQuestions.value]
     .sort(() => Math.random() - 0.5)
     .slice(0, 4) // Get 4 random questions
 }

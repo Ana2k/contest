@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import Papa from 'papaparse'
 
 const questions = ref([])
@@ -15,8 +15,8 @@ export async function loadQuestions(csvPath = '/current.csv') {
     Papa.parse(csvText, {
       header: true,
       complete: (results) => {
-        //No selected - components manage their own selection states...
-        questions.value = results.data
+        // Add selected: true to each question by default
+        questions.value = results.data.map(q => ({ ...q, selected: true }))
         isLoaded.value = true
       }
     })
@@ -26,6 +26,8 @@ export async function loadQuestions(csvPath = '/current.csv') {
   return questions
 }
 
+const selectedQuestions = computed(() => questions.value.filter(q => q.selected))
+
 export function useQuestions() {
-  return { questions, loadQuestions }
+  return { questions, loadQuestions, selectedQuestions }
 } 
