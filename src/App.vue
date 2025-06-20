@@ -1,28 +1,12 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import Papa from 'papaparse'
 import Timer from './components/Timer.vue'
 import QuestionSelector from './components/QuestionSelector.vue'
+import { useQuestions } from './composables/useQuestions'
 
-const questions = ref([])
+const { questions, loadQuestions } = useQuestions()
 const shuffledQuestions = ref([])
 const showSelector = ref(false)
-
-const loadCSV = async () => {
-  try {
-    const response = await fetch('/array.csv')
-    const csvText = await response.text()
-    Papa.parse(csvText, {
-      header: true,
-      complete: (results) => {
-        questions.value = results.data
-        shuffleQuestions()
-      }
-    })
-  } catch (error) {
-    console.error('Error loading CSV:', error)
-  }
-}
 
 const shuffleQuestions = () => {
   shuffledQuestions.value = [...questions.value]
@@ -30,8 +14,9 @@ const shuffleQuestions = () => {
     .slice(0, 4) // Get 4 random questions
 }
 
-onMounted(() => {
-  loadCSV()
+onMounted(async () => {
+  await loadQuestions()
+  shuffleQuestions()
 })
 </script>
 

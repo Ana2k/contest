@@ -1,39 +1,35 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import Papa from 'papaparse'
+import { ref, onMounted, watch } from 'vue'
+import { useQuestions } from '../composables/useQuestions'
 
-const questions = ref([])
+const { questions, loadQuestions } = useQuestions()
 const selectAll = ref(true)
 const shuffledQuestions = ref([])
+const localQs = ref([])
 
-const loadCSV = async () => {
-    try {
-        const response = await fetch('/core.csv')
-        const csvText = await response.text()
-        Papa.parse(csvText, {
-            header: true,
-            complete: (results) => {
-                questions.value = results.data.map(q => ({ ...q, selected: true }))
-            }
-        })
-    } catch (error) {
-        console.error('Error loading CSV:', error)
-    }
-}
+
+// Question and Selection mapping code
+onMounted(async () => {
+    await loadQuestions()
+    localQs.value = questions.value.map(q => ({ ...q, selected: true }))
+})
+
+// Keep selectAll in sync with localQuestions
+watch(selectAll, (val) => {
+    localQs.value.forEach(q => q.selected = val)
+})
 
 const toggleSelectAll = () => {
-    questions.value.forEach(q => q.selected = selectAll.value)
+    localQs.value.forEach(q => q.selected = selectAll.value)
 }
 
 const shuffleQuestions = () => {
-    const eligible = questions.value.filter(q => q.selected)
+    const eligible = localQs.value.filter(q => q.selected)
     shuffledQuestions.value = [...eligible].sort(() => Math.random() - 0.5).slice(0, 4)
 }
-
-onMounted(() => {
-    loadCSV()
-})
 </script>
+
+<!-- HTML Templates -->
 
 <template>
     <div class="qs-container">
@@ -42,16 +38,16 @@ onMounted(() => {
             <thead>
                 <tr>
                     <th><input type="checkbox" v-model="selectAll" @change="toggleSelectAll"></th>
-                    <th>Topic</th>
+                    <!-- <th>Topic</th> -->
                     <th>Question</th>
                     <th>Difficulty</th>
                     <th>Link</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(q, idx) in questions" :key="q.Link + idx">
+                <tr v-for="(q, idx) in localQs" :key="q.Link + idx">
                     <td><input type="checkbox" v-model="q.selected"></td>
-                    <td>{{ q.Topic }}</td>
+                    <!-- <td>{{ q.Topic }}</td> -->
                     <td>{{ q.Question }}</td>
                     <td>{{ q.Difficulty }}</td>
                     <td><a :href="q.Link" target="_blank">Solve</a></td>
@@ -71,6 +67,7 @@ onMounted(() => {
     </div>
 </template>
 
+<!-- STYLE FOR THIS PAGE AHEADD. -->
 <style scoped>
 .qs-container {
     max-width: 900px;
