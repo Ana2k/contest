@@ -4,6 +4,9 @@ import Papa from 'papaparse'
 const questions = ref([])
 const isLoaded = ref(false)
 
+//Composable created shared between App.vue and QuestionSelector.vue as well. 
+
+
 export async function loadQuestions(csvPath = '/core.csv') {
   if (isLoaded.value) return questions
   try {

@@ -7,6 +7,8 @@ const selectAll = ref(true)
 const shuffledQuestions = ref([])
 const localQs = ref([])
 
+//Selects a local copy of the questions so that user can 
+//Select or de-select the code for coupling. 
 
 // Question and Selection mapping code
 onMounted(async () => {

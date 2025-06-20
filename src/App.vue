@@ -57,6 +57,7 @@ onMounted(async () => {
   </div>
 </template>
 
+<!-- STYLE of this page -->
 <style>
 .container {
   max-width: 1200px;
