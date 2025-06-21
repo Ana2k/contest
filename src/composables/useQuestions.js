@@ -7,7 +7,7 @@ const isLoaded = ref(false)
 //Composable created shared between App.vue and QuestionSelector.vue as well. 
 
 
-export async function loadQuestions(csvPath = '/aditya_recursion.csv') {
+export async function loadQuestions(csvPath = '/aditya_graph.csv') {
   if (isLoaded.value) return questions
   try {
     const response = await fetch(csvPath)
