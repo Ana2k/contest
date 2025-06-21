@@ -1,6 +1,4 @@
 Topic,Question,Difficulty,Link
-Graph Types,Types of Graphs,,https://www.geeksforgeeks.org/graph-types-and-applications/
-Graph Implementation,Graph Implementations Code,,https://www.geeksforgeeks.org/implementing-generic-graph-in-java/
 BFS,Breadth First Search,,https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
 DFS,Depth-First Search,,https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/
 Path Finding,Find if Path Exists in Graph,Medium,https://leetcode.com/problems/find-if-path-exists-in-graph/
@@ -23,7 +21,7 @@ BFS Application,Geeks Village and Wells,,https://www.geeksforgeeks.org/minimum-t
 Graph Problems,Number of Operations to Make Network Connected,,https://leetcode.com/problems/number-of-operations-to-make-network-connected/
 Shortest Path,Shortest Path Algorithms,,https://www.geeksforgeeks.org/shortest-path-algorithms/
 BFS Application,Snakes and Ladders,,https://leetcode.com/problems/snakes-and-ladders/
-Dijkstra,Dijkstra's Algorithm Intuition,,https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
+Dijkstra,Dijkstra's Algorithm Intuition,,https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
 Dijkstra,Dijkstra's Algorithm Code,Medium,https://leetcode.com/problems/network-delay-time/
 Path Finding,Path With Minimum Effort,Medium,https://leetcode.com/problems/path-with-minimum-effort/
 Shortest Path,Cheapest Flights Within K Stops,Medium,https://leetcode.com/problems/cheapest-flights-within-k-stops/

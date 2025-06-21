@@ -11,7 +11,7 @@ const showSelector = ref(false)
 const shuffleQuestions = () => {
   shuffledQuestions.value = [...selectedQuestions.value]
     .sort(() => Math.random() - 0.5)
-    .slice(0, 4) // Get 4 random questions
+    .slice(0, 6) // Get 4 random questions
 }
 
 onMounted(async () => {
