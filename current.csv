@@ -1,10 +1,12 @@
 Topic,Question,Difficulty,Link
-Arrays & Hashing,Contains Duplicate,Easy,https://leetcode.com/problems/contains-duplicate/
-Arrays & Hashing,Valid Anagram,Easy,https://leetcode.com/problems/valid-anagram/
-Arrays & Hashing,Two Sum,Easy,https://leetcode.com/problems/two-sum/
-Arrays & Hashing,Group Anagrams,Medium,https://leetcode.com/problems/group-anagrams/
-Arrays & Hashing,Top K Frequent Elements,Medium,https://leetcode.com/problems/top-k-frequent-elements/
-Arrays & Hashing,Product of Array Except Self,Medium,https://leetcode.com/problems/product-of-array-except-self/
-Arrays & Hashing,Valid Sudoku,Medium,https://leetcode.com/problems/valid-sudoku/
-Arrays & Hashing,Encode and Decode Strings,Medium,https://www.lintcode.com/problem/659/
-Arrays & Hashing,Longest Consecutive Sequence,Medium,https://leetcode.com/problems/longest-consecutive-sequence/
+Shortest Path,Shortest Path Algorithms,,https://www.geeksforgeeks.org/shortest-path-algorithms/
+BFS Application,Snakes and Ladders,,https://leetcode.com/problems/snakes-and-ladders/
+Dijkstra,Dijkstra's Algorithm Intuition,,https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
+Dijkstra,Dijkstra's Algorithm Code,Medium,https://leetcode.com/problems/network-delay-time/
+Path Finding,Path With Minimum Effort,Medium,https://leetcode.com/problems/path-with-minimum-effort/
+Shortest Path,Cheapest Flights Within K Stops,Medium,https://leetcode.com/problems/cheapest-flights-within-k-stops/
+Bellman-Ford,Bellman-Ford Algorithm Part 1,,https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
+Bellman-Ford,Bellman-Ford Algorithm Code,Medium,https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
+Floyd-Warshall,Floyd-Warshall Algorithm,,https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/
+DSU,Disjoint Union Set Introduction,,https://www.geeksforgeeks.org/disjoint-set-data-structures/
+DSU,DSU Optimization Techniques,,https://www.geeksforgeeks.org/disjoint-set-union-find-algorithm-union-rank/
