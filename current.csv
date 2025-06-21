@@ -8,5 +8,3 @@ Shortest Path,Cheapest Flights Within K Stops,Medium,https://leetcode.com/proble
 Bellman-Ford,Bellman-Ford Algorithm Part 1,,https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
 Bellman-Ford,Bellman-Ford Algorithm Code,Medium,https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/
 Floyd-Warshall,Floyd-Warshall Algorithm,,https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/
-DSU,Disjoint Union Set Introduction,,https://www.geeksforgeeks.org/disjoint-set-data-structures/
-DSU,DSU Optimization Techniques,,https://www.geeksforgeeks.org/disjoint-set-union-find-algorithm-union-rank/
